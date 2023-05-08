@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - MovablePlatform
+  - Enemy
+  - Interactable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Interactables
+  - Wall
+  - Trash
+  - Hero
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1821370727
+    locked: 0
+  - name: BackProps
+    uniqueID: 3141121937
+    locked: 0
+  - name: Level
+    uniqueID: 3792944461
+    locked: 0
+  - name: Hero
+    uniqueID: 1559079423
+    locked: 0
+  - name: FrontProps
+    uniqueID: 2993319733
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
