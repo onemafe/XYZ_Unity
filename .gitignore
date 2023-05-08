@@ -47,6 +47,26 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# XYZ ignore
+/.vs
+*.exe
+*.log
+*.bin
+*.apk
+/Library/
+/Temp/
+/Assets/VSCode*
+/obj/
+/out
+/.vscode/
+*.sln
+*.userprefs
+*.csproj
+/.idea
+*.iml
+*.DotSettings.user
+/Assets/Plugins/Editor/JetBrains*
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
