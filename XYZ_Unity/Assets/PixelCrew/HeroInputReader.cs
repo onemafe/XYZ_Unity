@@ -42,6 +42,14 @@ namespace PixelCrew
             }
         }
 
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.Throw();
+            }
+        }
+
 
 
     }

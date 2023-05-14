@@ -47,6 +47,9 @@ TagManager:
   - name: BackProps
     uniqueID: 3141121937
     locked: 0
+  - name: Tilemap
+    uniqueID: 1506482761
+    locked: 0
   - name: Level
     uniqueID: 3792944461
     locked: 0

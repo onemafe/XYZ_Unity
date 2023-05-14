@@ -27,7 +27,8 @@ namespace PixelCrew.Creatures
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
 
-        
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
+
         //private Collider2D[] _interactionResult = new Collider2D[1];
 
         private bool allowDoubleJump;
@@ -125,6 +126,16 @@ namespace PixelCrew.Creatures
             base.Attack();
         }
 
+
+        public void OnDoThrow()
+        {
+            _particles.Spawn("Throw");
+        }
+
+        public void Throw()
+        {
+            Animator.SetTrigger(ThrowKey);
+        }
 
 
 
