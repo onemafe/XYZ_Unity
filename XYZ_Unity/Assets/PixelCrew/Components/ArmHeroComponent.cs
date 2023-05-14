@@ -13,6 +13,8 @@ namespace PixelCrew.Components
             {
                 hero.ArmHero();
             }
+
+            hero._knifesNumber += 1;
         }
 
     }

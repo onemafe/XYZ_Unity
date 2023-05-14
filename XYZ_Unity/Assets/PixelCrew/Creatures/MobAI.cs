@@ -54,12 +54,19 @@ namespace PixelCrew.Creatures
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
 
             StartState(GoToHero());
         }
 
+        private void LookAtHero()
+        {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(Vector2.zero);
+            _creature.UpdateSpriteDirection(direction);
+        }
         private IEnumerator GoToHero()
         {
             while (_vision.isTouchingLayer)
@@ -76,8 +83,11 @@ namespace PixelCrew.Creatures
                 yield return null;
             }
 
+            _creature.SetDirection(Vector2.zero);
             _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missHeroCooldown);
+
+            StartState(_patrol.DoPatrol());
         }
 
         private IEnumerator Attack()
@@ -93,10 +103,16 @@ namespace PixelCrew.Creatures
 
         private void SetDirectionToTarget()
         {
+            var direction = GetDirectionToTarget();
+
+            _creature.SetDirection(direction);
+        }
+
+        private Vector2 GetDirectionToTarget()
+        {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-
-            _creature.SetDirection(direction.normalized);
+            return direction.normalized;
         }
 
         private void StartState(IEnumerator coroutine)
@@ -117,6 +133,7 @@ namespace PixelCrew.Creatures
             _animator.SetBool(IsDeadKey, true);
             _collider2D.size = _collider2DSize;
 
+            _creature.SetDirection(Vector2.zero);
             if (_current != null)
                 StopCoroutine(_current);
         }

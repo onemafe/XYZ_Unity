@@ -1,5 +1,6 @@
 using PixelCrew.Components;
 using PixelCrew.Model;
+using PixelCrew.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -21,10 +22,12 @@ namespace PixelCrew.Creatures
 
         [SerializeField] private LayerCheck _wallCheck;
 
+        [SerializeField] public int _knifesNumber;
+        [SerializeField] private Cooldown _throwcooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
 
-        [Header("Particles")]
+        [Space] [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
@@ -134,8 +137,26 @@ namespace PixelCrew.Creatures
 
         public void Throw()
         {
-            Animator.SetTrigger(ThrowKey);
+            if (_throwcooldown.IsReady)
+            {
+                
+                if (_knifesNumber > 1)
+                {
+                    Animator.SetTrigger(ThrowKey);
+                    _throwcooldown.Reset();
+                    _knifesNumber -= 1;
+                }
+                else if (_knifesNumber == 1)
+                {
+                    Animator.SetTrigger(ThrowKey);
+                    _throwcooldown.Reset();
+                    _knifesNumber =- 1;
+                    DisarmHero();
+                }
+               
+            }
         }
+
 
 
 
@@ -217,6 +238,12 @@ namespace PixelCrew.Creatures
             _session.Data.IsArmed = true;
             UpdateHeroWeapon();
 
+        }
+
+        public void DisarmHero()
+        {
+            _session.Data.IsArmed = false;
+            UpdateHeroWeapon();
         }
 
 

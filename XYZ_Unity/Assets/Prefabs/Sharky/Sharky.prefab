@@ -133,6 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4096
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -353,12 +356,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7508193361755157997}
-        m_MethodName: 
+      - m_Target: {fileID: 1055350412792977885}
+        m_MethodName: OnDie
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -438,7 +441,7 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 1
-  _collider2DSize: {x: 0.5, y: 0.7456245}
+  _collider2DSize: {x: 0.5, y: 0.6}
 --- !u!114 &329812164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +484,7 @@ Transform:
   m_GameObject: {fileID: 7508193361933152935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: -0.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7508193361755157999}
   m_RootOrder: 3

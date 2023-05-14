@@ -35,6 +35,8 @@ namespace PixelCrew.Components
 
         public void ApplyDamage(int _damageValue)
         {
+            if (_health <= 0) return;
+
             _health -= _damageValue;
             _onDamage?.Invoke();
             if (_health <= 0)

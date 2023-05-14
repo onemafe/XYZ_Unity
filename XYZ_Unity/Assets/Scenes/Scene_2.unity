@@ -782,36 +782,11 @@ PrefabInstance:
       propertyPath: _points.Array.data[1]
       value: 
       objectReference: {fileID: 659873522}
-    - target: {fileID: 1055350412792977885, guid: 612df66f33565304788b71c78f130f1c,
-        type: 3}
-      propertyPath: _collider2DSize.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158242111047151874, guid: 612df66f33565304788b71c78f130f1c,
-        type: 3}
-      propertyPath: _layer.m_Bits
-      value: 4096
-      objectReference: {fileID: 0}
     - target: {fileID: 2158242111047151874, guid: 612df66f33565304788b71c78f130f1c,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1574423243}
-    - target: {fileID: 7508193361755157990, guid: 612df66f33565304788b71c78f130f1c,
-        type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 329812165}
-    - target: {fileID: 7508193361755157990, guid: 612df66f33565304788b71c78f130f1c,
-        type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: OnDie
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508193361755157990, guid: 612df66f33565304788b71c78f130f1c,
-        type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7508193361755157997, guid: 612df66f33565304788b71c78f130f1c,
         type: 3}
       propertyPath: m_Name
@@ -874,18 +849,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 612df66f33565304788b71c78f130f1c, type: 3}
---- !u!114 &329812165 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1055350412792977885, guid: 612df66f33565304788b71c78f130f1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 329812162}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c603468bf450d164a88ab628c8de9bdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &371512384
 GameObject:
   m_ObjectHideFlags: 0
@@ -10759,6 +10722,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7508193361755157985, guid: c5262ce6def9bd046a37dbcabfe030f0,
+        type: 3}
+      propertyPath: _knifesNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7508193361755157985, guid: c5262ce6def9bd046a37dbcabfe030f0,
+        type: 3}
+      propertyPath: _throwcooldown._value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7508193361755157997, guid: c5262ce6def9bd046a37dbcabfe030f0,
         type: 3}
       propertyPath: m_Name
