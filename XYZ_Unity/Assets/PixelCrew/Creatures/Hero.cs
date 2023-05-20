@@ -22,7 +22,7 @@ namespace PixelCrew.Creatures
 
         [SerializeField] private LayerCheck _wallCheck;
 
-        [SerializeField] public int _knifesNumber;
+        [SerializeField] public int _knivesNumber;
         [SerializeField] private Cooldown _throwcooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
@@ -65,6 +65,8 @@ namespace PixelCrew.Creatures
             }
                 
             health.SetHealth(_session.Data.Hp);
+
+            _knivesNumber = _session.Data.Knives;
             
         }
 
@@ -140,20 +142,13 @@ namespace PixelCrew.Creatures
             if (_throwcooldown.IsReady)
             {
                 
-                if (_knifesNumber > 1)
+                if (_knivesNumber > 1)
                 {
                     Animator.SetTrigger(ThrowKey);
                     _throwcooldown.Reset();
-                    _knifesNumber -= 1;
+                    _knivesNumber -= 1;
+                    _session.Data.Knives = _knivesNumber;
                 }
-                else if (_knifesNumber == 1)
-                {
-                    Animator.SetTrigger(ThrowKey);
-                    _throwcooldown.Reset();
-                    _knifesNumber =- 1;
-                    DisarmHero();
-                }
-               
             }
         }
 

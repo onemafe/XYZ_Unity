@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd700b689c11d94a9b9437ff2b15d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knivesNumber: 1
 --- !u!114 &1855501019483219467
 MonoBehaviour:
   m_ObjectHideFlags: 0

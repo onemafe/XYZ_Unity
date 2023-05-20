@@ -155,6 +155,7 @@ MonoBehaviour:
     Hp: 10
     MaxHp: 20
     IsArmed: 0
+    Knives: 0
 --- !u!4 &68179166
 Transform:
   m_ObjectHideFlags: 0
@@ -11004,6 +11005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189341806717575715, guid: 580536cd6982754468dff4336d1888ff,
+        type: 3}
+      propertyPath: knivesNumber
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6189341806717575716, guid: 580536cd6982754468dff4336d1888ff,
         type: 3}
