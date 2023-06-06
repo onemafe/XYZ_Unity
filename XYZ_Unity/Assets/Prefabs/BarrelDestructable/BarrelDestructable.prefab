@@ -264,6 +264,9 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &686895436293798757
 MonoBehaviour:
   m_ObjectHideFlags: 0

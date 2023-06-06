@@ -1,6 +1,7 @@
 using PixelCrew.Components;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -23,9 +24,17 @@ namespace PixelCrew.Creatures
         [SerializeField] private LayerCheck _wallCheck;
 
         [SerializeField] public int _knivesNumber;
-        [SerializeField] private Cooldown _throwcooldown;
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
+
+
+        [Header("Super throw")] [SerializeField]
+        private Cooldown _superThrowCooldown;
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
+
+
 
         [Space] [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
@@ -36,6 +45,7 @@ namespace PixelCrew.Creatures
 
         private bool allowDoubleJump;
         private bool _isOnWall;
+        private bool _superThrow;
 
         //private bool _isArmed;
         //public int scores;
@@ -44,7 +54,7 @@ namespace PixelCrew.Creatures
 
 
 
-        protected override void Awake()// Забираем физическое тело ГГ
+        protected override void Awake()// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ
         {
             base.Awake();
 
@@ -134,30 +144,77 @@ namespace PixelCrew.Creatures
 
         public void OnDoThrow()
         {
-            _particles.Spawn("Throw");
+            if (_superThrow)
+            {
+
+                var numThrows = Mathf.Min(_superThrowParticles, _knivesNumber - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+
+            else
+            {
+                _particles.Spawn("Throw");
+                _knivesNumber -= 1;
+                _session.Data.Knives = _knivesNumber;
+            }
+            _superThrow = false;
         }
 
-        public void Throw()
+        private IEnumerator DoSuperThrow (int numThrows)
         {
-            if (_throwcooldown.IsReady)
+            for (int i = 0; i < numThrows; i++)
+            {
+                _particles.Spawn("Throw");
+                _knivesNumber -= 1;
+                _session.Data.Knives = _knivesNumber;
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+
+        /*public void Throw()
+        {
+            if (_throwCooldown.IsReady)
             {
                 
                 if (_knivesNumber > 1)
                 {
                     Animator.SetTrigger(ThrowKey);
-                    _throwcooldown.Reset();
+                    _throwCooldown.Reset();
                     _knivesNumber -= 1;
                     _session.Data.Knives = _knivesNumber;
                 }
             }
+        }*/
+
+        public void StartThrowing()
+        {
+            _superThrowCooldown.Reset();
         }
 
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady || _knivesNumber <= 1)
+            {
+                return;
+            }
+            if (_superThrowCooldown.IsReady)
+                _superThrow = true;
 
+            if (_throwCooldown.IsReady)
+            {
 
+                if (_knivesNumber > 1)
+                {
+                    Animator.SetTrigger(ThrowKey);
+                    _throwCooldown.Reset();
+                }
+            }
+        }
 
         public void ShowScores()
         {
-            Debug.Log($"Ваш счёт: {_session.Data.Coins}");
+            Debug.Log($"пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ: {_session.Data.Coins}");
         }
 
 
@@ -257,11 +314,12 @@ namespace PixelCrew.Creatures
 
 
 
-        public void OnHealthChanged() //Вносим изменения из HealthComponent через HEro в Session. Вызываем его в HealtComponent.
+        public void OnHealthChanged() //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ HealthComponent пїЅпїЅпїЅпїЅпїЅ HEro пїЅ Session. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ HealtComponent.
         {
             var health = GetComponent<HealhComponent>();
             _session.Data.Hp = health._health;
         }
+
     }
 }
 
