@@ -5425,7 +5425,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -502022835
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -5497,7 +5497,7 @@ MonoBehaviour:
   _radius: 0.2
   _mask:
     serializedVersion: 2
-    m_Bits: 3895
+    m_Bits: 12087
   _onOverlap:
     m_PersistentCalls:
       m_Calls:
