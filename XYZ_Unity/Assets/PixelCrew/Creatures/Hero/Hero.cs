@@ -40,6 +40,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private ParticleSystem _hitParticles;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
         //private Collider2D[] _interactionResult = new Collider2D[1];
 
@@ -86,7 +87,9 @@ namespace PixelCrew.Creatures
         {
             base.Update();
 
-            if (_wallCheck.isTouchingLayer && Direction.x == transform.localScale.x)
+
+            var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
+            if (_wallCheck.isTouchingLayer && moveToSameDirection)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 1;
@@ -96,6 +99,8 @@ namespace PixelCrew.Creatures
                 _isOnWall = false;
                 Rigidbody.gravityScale = _defaultGravityScale;
             }
+
+            Animator.SetBool(IsOnWall, _isOnWall);
         }
 
 
@@ -122,7 +127,7 @@ namespace PixelCrew.Creatures
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!_IsGrounded && allowDoubleJump)
+            if (!_IsGrounded && allowDoubleJump && !_isOnWall)
             {
                 _particles.Spawn("Jump");
                 allowDoubleJump = false;

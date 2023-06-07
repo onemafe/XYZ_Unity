@@ -308,8 +308,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _wallCheck: {fileID: 7508193363076083218}
+  _knivesNumber: 0
+  _throwCooldown:
+    _value: 1
   _armed: {fileID: 9100000, guid: c00f617e32271774b9d6db5f9939ed83, type: 2}
   _disarmed: {fileID: 9100000, guid: 3119b0eabd9d9374e9c4428e1309e059, type: 2}
+  _superThrowCooldown:
+    _value: 1
+  _superThrowParticles: 3
+  _superThrowDelay: 0.2
   _hitParticles: {fileID: 7508193362230669458}
 --- !u!114 &7508193361755157984
 MonoBehaviour:
@@ -453,7 +460,7 @@ Animator:
   m_GameObject: {fileID: 7508193361755157997}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c00f617e32271774b9d6db5f9939ed83, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3119b0eabd9d9374e9c4428e1309e059, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
