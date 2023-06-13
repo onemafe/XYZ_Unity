@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class ShootingTrapAI : MonoBehaviour
 {
-    [SerializeField] LayerCheck _vision;
-    [SerializeField] SpriteAnimationGroup _animator;
-    [SerializeField] Cooldown _cooldown;
+    [SerializeField] public LayerCheck _vision;
+    [SerializeField] private SpriteAnimationGroup _animator;
+    [SerializeField] private Cooldown _cooldown;
 
 
     private void Update()
@@ -20,7 +20,7 @@ public class ShootingTrapAI : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         _cooldown.Reset();
         _animator.SetClip("start-attack");
