@@ -266,7 +266,7 @@ MonoBehaviour:
   _tag: Enemy
   _layer:
     serializedVersion: 2
-    m_Bits: 12087
+    m_Bits: 44855
   _action:
     m_PersistentCalls:
       m_Calls:
