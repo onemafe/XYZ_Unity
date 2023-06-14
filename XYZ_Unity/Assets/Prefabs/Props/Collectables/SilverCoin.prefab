@@ -128,10 +128,10 @@ GameObject:
   - component: {fileID: 8275299497632951015}
   - component: {fileID: 8275299497632951014}
   - component: {fileID: 8275299497632951009}
-  - component: {fileID: 8275299497632951034}
   - component: {fileID: 8275299497632951035}
   - component: {fileID: 3345745830737347515}
   - component: {fileID: -1196482261447493534}
+  - component: {fileID: 6550207019557933044}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -236,13 +236,13 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8275299497632951034}
-        m_MethodName: AddScores
-        m_Mode: 1
+      - m_Target: {fileID: 6550207019557933044}
+        m_MethodName: Add
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -286,21 +286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8275299497632951008}
---- !u!114 &8275299497632951034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8275299497632951008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ac8e910974f0f4ba3a241689c9f894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _score: 1
-  _coin: {fileID: 8275299497632951008}
-  _hero: {fileID: 0}
 --- !u!114 &8275299497632951035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,3 +344,17 @@ MonoBehaviour:
   _frequency: 5
   _amplitude: 0.1
   _randomize: 0
+--- !u!114 &6550207019557933044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8275299497632951008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ba6c73d342a427395ad684149af14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 1

@@ -12,9 +12,10 @@ namespace PixelCrew.Model
 
         public InventoryData Inventory => _inventory;
 
+        //public int Coins;
         public int Hp;
         public int MaxHp;
-        public bool IsArmed;
+        //public bool IsArmed;
         public int Knives;
     }
 }

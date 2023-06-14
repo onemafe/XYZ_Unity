@@ -15,7 +15,7 @@ namespace PixelCrew.Components
 		public void CalculateDrop()
 		{
 			var itemsToDrop = new GameObject[_count];
-			var itemCount = 0;
+			//var itemCount = 0;
 			var total = _drop.Sum(dropData => dropData.Probability);
 			var drop = _drop.OrderBy(dropData => dropData.Probability);
 
