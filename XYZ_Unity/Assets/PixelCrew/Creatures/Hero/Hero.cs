@@ -48,6 +48,10 @@ namespace PixelCrew.Creatures
         private bool _isOnWall;
         private bool _superThrow;
 
+
+        private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int SwordCount => _session.Data.Inventory.Count("Sword");
+
         //private bool _isArmed;
         //public int scores;
 
@@ -297,8 +301,7 @@ namespace PixelCrew.Creatures
 
         }
 
-        private int CoinsCount => _session.Data.Inventory.Count("Coin");
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+
 
 
         private void UpdateHeroWeapon()
