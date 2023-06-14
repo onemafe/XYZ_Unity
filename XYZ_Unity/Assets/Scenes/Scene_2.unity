@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
+    _inventory:
+      _inventory: []
     Coins: 0
     Hp: 10
     MaxHp: 20
@@ -10959,9 +10961,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _traps:
-  - {fileID: 201230266}
-  - {fileID: 1688150341}
   - {fileID: 916183652}
+  - {fileID: 1688150341}
+  - {fileID: 201230266}
   _cooldown:
     _value: 2
 --- !u!1 &2081499949

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class InventoryData : MonoBehaviour
+public class InventoryData
 {
     [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
@@ -12,7 +12,10 @@ public class InventoryData : MonoBehaviour
     {
         if (value <= 0) return;
 
-        DefsFacade.I.Items.Get(id);
+
+        var itemDef = DefsFacade.I.Items.Get(id);
+        if (itemDef.IsVoid) return;
+
 
         var item = GetItem(id);
         if (item == null)
@@ -27,6 +30,10 @@ public class InventoryData : MonoBehaviour
 
     public void Remove(string id, int value)
     {
+        var itemDef = DefsFacade.I.Items.Get(id);
+        if (itemDef.IsVoid) return;
+
+
         var item = GetItem(id);
         if (item == null) return;
 

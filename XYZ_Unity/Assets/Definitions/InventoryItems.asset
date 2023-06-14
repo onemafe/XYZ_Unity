@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562adc9c3ba7f43ed818c6fd15719871, type: 3}
   m_Name: InventoryItems
   m_EditorClassIdentifier: 
-  _items: []
+  _items:
+  - _id: Coin
+  - _id: Sword
