@@ -82,7 +82,29 @@ namespace PixelCrew.Creatures
             health.SetHealth(_session.Data.Hp);
 
             _knivesNumber = _session.Data.Knives;
-            
+
+            _session.Data.Inventory.OnChanged += OnInventoryChanged;
+            _session.Data.Inventory.OnChanged += AnotherHandler;
+
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == "Sword")
+            {
+                UpdateHeroWeapon();
+            }
+        }
+
+        private void AnotherHandler(string id, int value)
+        {
+            Debug.Log($"Inventory Changed: {id}: {value}");
+        }
+
+        private void OnDestroy() //чтобы не нагружалась память
+        {
+            _session.Data.Inventory.OnChanged -= OnInventoryChanged;
+            _session.Data.Inventory.OnChanged -= AnotherHandler;
         }
 
 

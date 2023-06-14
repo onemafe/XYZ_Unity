@@ -17,5 +17,13 @@ namespace PixelCrew.Model
         public int MaxHp;
         //public bool IsArmed;
         public int Knives;
+
+        public PlayerData Clone()
+        {
+            var json = JsonUtility.ToJson(this);
+            return JsonUtility.FromJson<PlayerData>(json);
+        }
     }
+
+
 }

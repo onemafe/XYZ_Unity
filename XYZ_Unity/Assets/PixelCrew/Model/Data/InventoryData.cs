@@ -8,6 +8,11 @@ public class InventoryData
 {
     [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
+    public delegate void OnInventaryChanged(string id, int value); // Само тело не нужно
+
+    public OnInventaryChanged OnChanged;
+
+
     public void Add(string id, int value)
     {
         if (value <= 0) return;
@@ -26,6 +31,8 @@ public class InventoryData
         }
 
         item.Value += value;
+
+        OnChanged?.Invoke(id, Count(id));
     }
 
     public void Remove(string id, int value)
@@ -43,6 +50,8 @@ public class InventoryData
         {
             _inventory.Remove(item);
         }
+
+        OnChanged?.Invoke(id, Count(id));
     }
 
 
