@@ -7,8 +7,10 @@ namespace PixelCrew.Model
     [Serializable]
     public class PlayerData
     {
-        [SerializeField] InventoryData _inventory;
+        [SerializeField] private InventoryData _inventory;
 
+
+        public InventoryData Inventory => _inventory;
         public int Coins;
         public int Hp;
         public int MaxHp;

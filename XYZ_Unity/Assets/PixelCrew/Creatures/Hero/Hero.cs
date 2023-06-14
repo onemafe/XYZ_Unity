@@ -229,7 +229,9 @@ namespace PixelCrew.Creatures
         {
             base.TakeDamage();
 
-            if (_session.Data.Coins > 0)
+            var numCoins = _session.Data.Inventory.Count("Coin");
+
+            if (numCoins > 0)
             {
                 SpawnCoins();
             }
@@ -239,8 +241,11 @@ namespace PixelCrew.Creatures
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
-        _session.Data.Coins -= numCoinsToDispose;
+            var numCoins = _session.Data.Inventory.Count("Coin");
+            var numCoinsToDispose = Mathf.Min(numCoins, 5);
+
+            _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
+
 
             var burst = _hitParticles.emission.GetBurst(0);
             burst.count = numCoinsToDispose;
@@ -288,6 +293,12 @@ namespace PixelCrew.Creatures
             _swordAttackParticle.Spawn();
         }*/
 
+
+
+        public void AddInInventory(string id, int value)
+        {
+
+        }
 
 
         public void ArmHero()

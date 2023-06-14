@@ -57,6 +57,18 @@ public class InventoryData
 
         return null;
     }
+
+    public int Count(string id) //Возвращаем количество, принимаем id
+    {
+        var count = 0;
+        foreach (var item in _inventory)
+        {
+            if (item.Id == id)
+                count += item.Value;
+        }
+
+        return count;
+    }
 }
 
 [Serializable]
