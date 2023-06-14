@@ -139,9 +139,9 @@ namespace PixelCrew.Creatures
 
 
 
-        public override void Attack()
+        public override void Attack() // SwordCount искать ниже у аниматоров атаки
         {
-            if (!_session.Data.IsArmed) return;
+            if (SwordCount <= 0) return;
 
             base.Attack();
         }
@@ -219,7 +219,7 @@ namespace PixelCrew.Creatures
 
         public void ShowScores()
         {
-            Debug.Log($"��� ����: {_session.Data.Coins}");
+            Debug.Log($"��� ����: {CoinsCount}");
         }
 
 
@@ -229,9 +229,7 @@ namespace PixelCrew.Creatures
         {
             base.TakeDamage();
 
-            var numCoins = _session.Data.Inventory.Count("Coin");
-
-            if (numCoins > 0)
+            if (CoinsCount > 0)
             {
                 SpawnCoins();
             }
@@ -241,8 +239,7 @@ namespace PixelCrew.Creatures
 
         private void SpawnCoins()
         {
-            var numCoins = _session.Data.Inventory.Count("Coin");
-            var numCoinsToDispose = Mathf.Min(numCoins, 5);
+            var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
 
             _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
@@ -300,25 +297,13 @@ namespace PixelCrew.Creatures
 
         }
 
-
-        public void ArmHero()
-        {
-            _session.Data.IsArmed = true;
-            UpdateHeroWeapon();
-
-        }
-
-        public void DisarmHero()
-        {
-            _session.Data.IsArmed = false;
-            UpdateHeroWeapon();
-        }
-
+        private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int SwordCount => _session.Data.Inventory.Count("Sword");
 
 
         private void UpdateHeroWeapon()
         {
-            if (_session.Data.IsArmed)
+            if (SwordCount > 0)
             {
                 Animator.runtimeAnimatorController = _armed;
             }
