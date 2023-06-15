@@ -23,7 +23,6 @@ namespace PixelCrew.Creatures
 
         [SerializeField] private LayerCheck _wallCheck;
 
-        [SerializeField] public int _knivesNumber;
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
@@ -80,8 +79,6 @@ namespace PixelCrew.Creatures
             }
                 
             health.SetHealth(_session.Data.Hp);
-
-            _knivesNumber = _session.Data.Knives;
 
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
             _session.Data.Inventory.OnChanged += AnotherHandler;
@@ -173,31 +170,34 @@ namespace PixelCrew.Creatures
         }
 
 
+
+
         public void OnDoThrow()
         {
             if (_superThrow)
             {
 
-                var numThrows = Mathf.Min(_superThrowParticles, _knivesNumber - 1);
+                var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
                 StartCoroutine(DoSuperThrow(numThrows));
             }
 
             else
             {
                 _particles.Spawn("Throw");
-                _knivesNumber -= 1;
-                _session.Data.Knives = _knivesNumber;
+                RemoveFromInventory("Sword", 1);
             }
             _superThrow = false;
         }
+
+
+
 
         private IEnumerator DoSuperThrow (int numThrows)
         {
             for (int i = 0; i < numThrows; i++)
             {
                 _particles.Spawn("Throw");
-                _knivesNumber -= 1;
-                _session.Data.Knives = _knivesNumber;
+                RemoveFromInventory("Sword", 1);
                 yield return new WaitForSeconds(_superThrowDelay);
             }
         }
@@ -225,7 +225,7 @@ namespace PixelCrew.Creatures
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady || _knivesNumber <= 1)
+            if (!_throwCooldown.IsReady || SwordCount <= 1)
             {
                 return;
             }
@@ -235,7 +235,7 @@ namespace PixelCrew.Creatures
             if (_throwCooldown.IsReady)
             {
 
-                if (_knivesNumber > 1)
+                if (SwordCount > 1)
                 {
                     Animator.SetTrigger(ThrowKey);
                     _throwCooldown.Reset();
@@ -321,6 +321,11 @@ namespace PixelCrew.Creatures
         public void AddInInventory(string id, int value)
         {
             _session.Data.Inventory.Add(id, value);
+        }
+
+        public void RemoveFromInventory(string id, int value)
+        {
+            _session.Data.Inventory.Remove(id, value);
         }
 
 

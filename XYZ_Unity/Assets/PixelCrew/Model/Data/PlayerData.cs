@@ -16,7 +16,7 @@ namespace PixelCrew.Model
         public int Hp;
         public int MaxHp;
         //public bool IsArmed;
-        public int Knives;
+        //public int Knives;
 
         public PlayerData Clone()
         {
