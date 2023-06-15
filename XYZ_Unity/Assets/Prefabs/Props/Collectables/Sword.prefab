@@ -146,7 +146,7 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
   _action:
     m_PersistentCalls:
       m_Calls:
