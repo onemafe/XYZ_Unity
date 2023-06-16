@@ -152,7 +152,7 @@ namespace PixelCrew.Creatures
         {
             if (!_IsGrounded && allowDoubleJump && !_isOnWall)
             {
-                _particles.Spawn("Jump");
+                DoJumpVfx();
                 allowDoubleJump = false;
                 return _jumpSpeed;
             }
@@ -184,6 +184,7 @@ namespace PixelCrew.Creatures
             else
             {
                 _particles.Spawn("Throw");
+                Sounds.Play("Range");
                 RemoveFromInventory("Sword", 1);
             }
             _superThrow = false;
@@ -197,6 +198,7 @@ namespace PixelCrew.Creatures
             for (int i = 0; i < numThrows; i++)
             {
                 _particles.Spawn("Throw");
+                Sounds.Play("Range");
                 RemoveFromInventory("Sword", 1);
                 yield return new WaitForSeconds(_superThrowDelay);
             }
