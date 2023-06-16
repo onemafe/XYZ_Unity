@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4512653496143461004}
   - component: {fileID: 8392561916778345844}
   - component: {fileID: 4775824538048179075}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hero: {fileID: 7508193361755157985}
+  _healthComponent: {fileID: 7508193361755157990}
 --- !u!114 &7508193361755157985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +309,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _wallCheck: {fileID: 7508193363076083218}
-  _knivesNumber: 0
   _throwCooldown:
     _value: 1
   _armed: {fileID: 9100000, guid: c00f617e32271774b9d6db5f9939ed83, type: 2}
@@ -408,6 +408,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 072345e2-e944-48fb-9785-e12cef125460
     m_ActionName: Hero/Throw[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7508193361755157986}
+        m_MethodName: OnBottleHeal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ef9d3c56-9e1f-4025-888a-f1aba31d9337
+    m_ActionName: Hero/HealByBottle
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -546,6 +561,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _bottleHeal: 5
 --- !u!114 &7508193361755157991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5461,7 +5477,7 @@ GameObject:
   - component: {fileID: 7508193362253344498}
   - component: {fileID: 7508193362253344499}
   - component: {fileID: 295620704}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5497,7 +5513,7 @@ MonoBehaviour:
   _radius: 0.2
   _mask:
     serializedVersion: 2
-    m_Bits: 12087
+    m_Bits: 44855
   _onOverlap:
     m_PersistentCalls:
       m_Calls:
@@ -5628,7 +5644,7 @@ GameObject:
   - component: {fileID: 7508193363076083216}
   - component: {fileID: 7508193363076083218}
   - component: {fileID: 7508193363076083217}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5692,7 +5708,7 @@ GameObject:
   - component: {fileID: 7508193363177927808}
   - component: {fileID: 7508193363177927823}
   - component: {fileID: 7508193363177927822}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

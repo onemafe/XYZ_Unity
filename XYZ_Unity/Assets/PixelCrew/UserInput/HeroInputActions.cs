@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/UserInput/HeroInputActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/PixelCrew/UserInput/HeroInputActions.inputactions'
 
 using System;
 using System.Collections;
@@ -54,6 +54,14 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""name"": ""Throw"",
                     ""type"": ""Button"",
                     ""id"": ""072345e2-e944-48fb-9785-e12cef125460"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HealByBottle"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef9d3c56-9e1f-4025-888a-f1aba31d9337"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -158,6 +166,17 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a19d6d4-6994-43c2-b9b8-71cbd47db468"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HealByBottle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -171,6 +190,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         m_Hero_Interact = m_Hero.FindAction("Interact", throwIfNotFound: true);
         m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
         m_Hero_Throw = m_Hero.FindAction("Throw", throwIfNotFound: true);
+        m_Hero_HealByBottle = m_Hero.FindAction("HealByBottle", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -225,6 +245,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_Interact;
     private readonly InputAction m_Hero_Attack;
     private readonly InputAction m_Hero_Throw;
+    private readonly InputAction m_Hero_HealByBottle;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -234,6 +255,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Hero_Interact;
         public InputAction @Attack => m_Wrapper.m_Hero_Attack;
         public InputAction @Throw => m_Wrapper.m_Hero_Throw;
+        public InputAction @HealByBottle => m_Wrapper.m_Hero_HealByBottle;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +280,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @Throw.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnThrow;
                 @Throw.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnThrow;
                 @Throw.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnThrow;
+                @HealByBottle.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnHealByBottle;
+                @HealByBottle.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnHealByBottle;
+                @HealByBottle.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnHealByBottle;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -277,6 +302,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @Throw.started += instance.OnThrow;
                 @Throw.performed += instance.OnThrow;
                 @Throw.canceled += instance.OnThrow;
+                @HealByBottle.started += instance.OnHealByBottle;
+                @HealByBottle.performed += instance.OnHealByBottle;
+                @HealByBottle.canceled += instance.OnHealByBottle;
             }
         }
     }
@@ -288,5 +316,6 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
+        void OnHealByBottle(InputAction.CallbackContext context);
     }
 }

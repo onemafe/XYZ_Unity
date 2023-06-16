@@ -1,3 +1,4 @@
+using PixelCrew.Components;
 using PixelCrew.Creatures;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace PixelCrew
     public class HeroInputReader : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
+        [SerializeField] private HealhComponent _healthComponent;
 
 
         public void OnMovement(InputAction.CallbackContext context)
@@ -54,6 +56,16 @@ namespace PixelCrew
                 _hero.PerformThrowing();
             }
         }
+
+        public void OnBottleHeal(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                _healthComponent.HealByBottle();
+            }
+        }
+
+
 
 
 

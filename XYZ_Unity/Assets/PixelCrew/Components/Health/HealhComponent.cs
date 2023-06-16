@@ -18,12 +18,18 @@ namespace PixelCrew.Components
         /*[SerializeField] private HealthChangeEvent _onChange;*/
 
         private GameSession _session;
+        private Hero _hero;
 
-        /*private void Start()
+        private int BottleHealthCount => _session.Data.Inventory.Count("BottleHealth");
+
+        [SerializeField] private int _bottleHeal;
+
+
+        private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            _health = _session.Data.Hp;
-        }*/
+            _hero = GetComponent<Hero>();
+        }
 
         [ContextMenu("Kill")]
         public void Kill()
@@ -50,13 +56,25 @@ namespace PixelCrew.Components
             }*/
         }
 
+        public void HealByBottle()
+        {
+            if (BottleHealthCount > 0)
+            {
+                _session.Data.Inventory.Remove("BottleHealth", 1);
+                AddHealthPoints(_bottleHeal);
+            }
+        }
+
         public void AddHealthPoints(int _healthValue)
         {
+
             _health += _healthValue;
             _onHeal?.Invoke();
             Debug.Log(_health);
             //_hero.OnHealthChanged();
         }
+
+
 
         public void SetHealth(int health) //В классе Hero обращаемся к этому методу чтобы установить жизни. Там они берутся из Gamesession.
         {
@@ -75,6 +93,7 @@ namespace PixelCrew.Components
         {
 
         }*/
+
     }
 }
 

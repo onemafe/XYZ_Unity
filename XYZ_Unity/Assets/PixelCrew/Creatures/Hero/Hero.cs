@@ -262,6 +262,8 @@ namespace PixelCrew.Creatures
         }
 
 
+        
+
 
         private void SpawnCoins()
         {
