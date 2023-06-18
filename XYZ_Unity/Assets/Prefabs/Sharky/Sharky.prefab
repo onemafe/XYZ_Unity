@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3174965257891807702}
   - component: {fileID: 271123591118192054}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MissParticlePosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4927493370362660879}
   - component: {fileID: 2897740702204116749}
   - component: {fileID: 2158242111047151874}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,13 +169,13 @@ GameObject:
   - component: {fileID: 3101804473127534370}
   - component: {fileID: 1055350412792977885}
   - component: {fileID: 329812164}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sharky
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7508193361755157999
 Transform:
   m_ObjectHideFlags: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
+  _bottleHeal: 0
 --- !u!114 &7508193361755157991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7508193361933152952}
   - component: {fileID: 7508193361933152953}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FootStepsPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -516,7 +517,7 @@ GameObject:
   - component: {fileID: 295620704}
   - component: {fileID: 4908650927417258282}
   - component: {fileID: 4883335557726041797}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -624,7 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7508193362742774226}
   - component: {fileID: 7508193362742774227}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FootJumpPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -670,7 +671,7 @@ GameObject:
   - component: {fileID: 7508193363177927808}
   - component: {fileID: 7508193363177927823}
   - component: {fileID: 7508193363177927822}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9072509106551783127}
   - component: {fileID: 103158982989943487}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ExlamationPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
