@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2092257309575879122}
   - component: {fileID: 2092257309575879133}
   m_Layer: 13
-  m_Name: PearlSpawnPosition
+  m_Name: WoodSpikeSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2092257309822761139
 Transform:
   m_ObjectHideFlags: 0
@@ -255,6 +255,7 @@ MonoBehaviour:
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
+  _bottleHeal: 0
 --- !u!114 &8657174121469611166
 MonoBehaviour:
   m_ObjectHideFlags: 0

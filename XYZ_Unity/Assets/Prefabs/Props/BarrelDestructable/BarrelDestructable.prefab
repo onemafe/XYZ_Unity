@@ -267,6 +267,7 @@ MonoBehaviour:
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
+  _bottleHeal: 0
 --- !u!114 &686895436293798757
 MonoBehaviour:
   m_ObjectHideFlags: 0
