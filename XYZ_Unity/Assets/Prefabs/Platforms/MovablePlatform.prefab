@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5155645495090718122}
   - component: {fileID: 6592211610127765775}
   - component: {fileID: 6877465486989230914}
-  - component: {fileID: 2075289616}
   m_Layer: 8
   m_Name: MovablePlatform
   m_TagString: MovablePlatform
@@ -142,16 +141,3 @@ MonoBehaviour:
   speed: 2
   hasReachedRight: 0
   hasReachedLeft: 0
---- !u!114 &2075289616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5155645495090718124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be1f0929feeb624fa4ae408e10aad96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objVelocity: {x: 0, y: 0}
