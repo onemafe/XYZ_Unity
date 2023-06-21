@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace PixelCrew.Creatures
 {
-    public class Hero : Creature
+    public class Hero : Creature, ICanAddInInventory
     {
   
         [SerializeField] private float _interactionRadius;

@@ -11,7 +11,7 @@ namespace PixelCrew.Components
         Vector2 prevPos;
         Vector2 newPos;
         public Vector2 objVelocity;
-        void Start()
+        void Awake()
         {
             prevPos = transform.position;
             newPos = transform.position;
