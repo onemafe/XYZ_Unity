@@ -6058,5 +6058,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 65792
   _isTouchingLayer: 0
