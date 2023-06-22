@@ -8,6 +8,8 @@ namespace PixelCrew.Creatures
     {
         [SerializeField] private Transform[] _points;
         [SerializeField] private float _treshold = 1f;
+        [SerializeField] private LayerCheck _layerCheck;
+        private bool _isOnGround;
 
         private Creature _creature;
         private int _destinationPointIndex;
