@@ -9,7 +9,6 @@ namespace PixelCrew.Creatures
     public class PinkStarAI : MonoBehaviour
     {
         [SerializeField] private LayerCheck _vision;
-        [SerializeField] private LayerCheck _canAttack;
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
@@ -163,6 +162,7 @@ namespace PixelCrew.Creatures
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
             _collider2D.size = _collider2DSize;
+            _attackRange.SetActive(false);
 
             _creature.SetDirection(Vector2.zero);
             if (_current != null)
