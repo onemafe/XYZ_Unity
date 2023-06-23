@@ -10,7 +10,7 @@ namespace PixelCrew.Creatures
     {
         [Header("Params")]
         [SerializeField] private bool _invertScale;
-        [SerializeField] private float _speed;
+        [SerializeField] public float _speed;
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] protected float _damageJumpSpeed;
         [SerializeField] private int _damage;
