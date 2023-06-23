@@ -63,7 +63,7 @@ namespace PixelCrew.Creatures
         private IEnumerator AgroToHero()
         {
             LookAtHero();
-            _particles.Spawn("Exclamation"); // вот тут надо добавить анимацию перед роллом
+            _particles.Spawn("Exclamation");
             _animator.SetTrigger(BeforeAttack);
             yield return new WaitForSeconds(_alarmDelay);
 
@@ -84,28 +84,23 @@ namespace PixelCrew.Creatures
             while (_vision.isTouchingLayer)
             {
                 SetDirectionToTarget();
+
                 _animator.SetBool(IsRollKey, true);
                 _creature._speed = _rollSpeed;
                 _attackRange.SetActive(true);
 
-                //анимация ролла
-                //увеличение скорости
-                //включаем объект дамага, или респауним его
 
                 yield return null;
             }
-
-            
             
                 _animator.SetBool(IsRollKey, false);
                 _creature._speed = startSpeed;
                 _attackRange.SetActive(false);
-                //сбрасываем значение скорости обратно
-                //анимация обратно
-                //уничтожаем объект дамага
+
 
                 _creature.SetDirection(Vector2.zero);
                 _particles.Spawn("MissHero");
+
                 yield return new WaitForSeconds(_missHeroCooldown);
             
 
