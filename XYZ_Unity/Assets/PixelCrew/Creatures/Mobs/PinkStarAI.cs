@@ -64,7 +64,7 @@ namespace PixelCrew.Creatures
         {
             LookAtHero();
             _particles.Spawn("Exclamation");
-            _animator.SetTrigger(BeforeAttack);
+            //_animator.SetTrigger(BeforeAttack);
             yield return new WaitForSeconds(_alarmDelay);
 
 
@@ -81,6 +81,7 @@ namespace PixelCrew.Creatures
 
         private IEnumerator RollToHero()
         {
+            _animator.SetTrigger(BeforeAttack);
             while (_vision.isTouchingLayer)
             {
                 SetDirectionToTarget();
