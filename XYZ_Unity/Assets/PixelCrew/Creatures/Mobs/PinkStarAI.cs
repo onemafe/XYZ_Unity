@@ -11,7 +11,6 @@ namespace PixelCrew.Creatures
         [SerializeField] private LayerCheck _vision;
 
         [SerializeField] private float _alarmDelay = 0.5f;
-        [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _missHeroCooldown = 0.5f;
         [SerializeField] private Vector2 _collider2DSize;
         [SerializeField] private float _rollSpeed = 2.5f;
