@@ -12,11 +12,8 @@ namespace PixelCrew.Model
 
         public InventoryData Inventory => _inventory;
 
-        //public int Coins;
-        public int Hp;
         public int MaxHp;
-        //public bool IsArmed;
-        //public int Knives;
+        public IntProperty Hp = new IntProperty();
 
         public PlayerData Clone()
         {

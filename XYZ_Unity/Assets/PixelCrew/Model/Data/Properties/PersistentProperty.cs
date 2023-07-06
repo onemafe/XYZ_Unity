@@ -8,7 +8,7 @@ using UnityEngine;
 public abstract class PersistentProperty<TPropertyType>
 {
     [SerializeField] protected TPropertyType _value;
-    private TPropertyType _stored;
+    protected TPropertyType _stored;
     private TPropertyType _defaultValue;
 
     public delegate void OnPropertyChanged(TPropertyType newValue, TPropertyType oldValue);

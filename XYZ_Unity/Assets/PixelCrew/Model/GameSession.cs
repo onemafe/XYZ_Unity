@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
@@ -11,6 +13,8 @@ namespace PixelCrew.Model
 
         private void Awake()
         {
+            LoadHud();
+
             if (IsSessionExit())
             {
                 Destroy(gameObject);
@@ -20,6 +24,11 @@ namespace PixelCrew.Model
                 DontDestroyOnLoad(this);
             }
 
+        }
+
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         private bool IsSessionExit()

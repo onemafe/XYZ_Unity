@@ -73,12 +73,12 @@ namespace PixelCrew.Creatures
             UpdateHeroWeapon();
 
             var health = GetComponent<HealhComponent>();
-            if (_session.Data.Hp <= 0)
+            if (_session.Data.Hp.Value <= 0)
             {
-                _session.Data.Hp = _session.Data.MaxHp; 
+                _session.Data.Hp.Value = _session.Data.MaxHp; 
             }
                 
-            health.SetHealth(_session.Data.Hp);
+            health.SetHealth(_session.Data.Hp.Value);
 
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
             _session.Data.Inventory.OnChanged += AnotherHandler;
@@ -352,7 +352,7 @@ namespace PixelCrew.Creatures
         public void OnHealthChanged() //������ ��������� �� HealthComponent ����� HEro � Session. �������� ��� � HealtComponent.
         {
             var health = GetComponent<HealhComponent>();
-            _session.Data.Hp = health._health;
+            _session.Data.Hp.Value = health._health;
         }
 
     }

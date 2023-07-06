@@ -769,8 +769,9 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory: []
-    Hp: 10
     MaxHp: 20
+    Hp:
+      _value: 0
 --- !u!4 &68179166
 Transform:
   m_ObjectHideFlags: 0
