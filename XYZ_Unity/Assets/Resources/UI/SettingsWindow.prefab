@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 5100774084990836260}
   - component: {fileID: 5100774084990836261}
   - component: {fileID: 5100774084990836262}
+  - component: {fileID: 3227189776304008280}
   m_Layer: 5
   m_Name: ButtonOK
   m_TagString: Untagged
@@ -1083,17 +1084,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5100774084179711103}
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1444820328488334824}
         m_MethodName: Close
         m_Mode: 1
@@ -1107,6 +1097,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 5100774083869949104}
   _pressed: {fileID: 5100774084586353422}
+--- !u!114 &3227189776304008280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100774084990836256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3998d7ea5ec64494f92d3791b3232960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 326abcfcdbcf74cddb7e195ed86b031c, type: 3}
 --- !u!1 &5914885355950308333
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[Serializable]
 public abstract class PersistentProperty<TPropertyType>
 {
     [SerializeField] private TPropertyType _value;
