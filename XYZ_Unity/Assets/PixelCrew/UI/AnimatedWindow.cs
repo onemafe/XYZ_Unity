@@ -10,7 +10,7 @@ public class AnimatedWindow : MonoBehaviour
     private static readonly int Hide = Animator.StringToHash("Hide");
 
 
-    void Start()
+    protected virtual void Start()
     {
         _animator = GetComponent<Animator>();
 
