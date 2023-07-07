@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 277250428}
   - component: {fileID: 277250430}
   - component: {fileID: 277250429}
+  - component: {fileID: 277250431}
   m_Layer: 0
   m_Name: QuickInventory
   m_TagString: Untagged
@@ -401,6 +402,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277250427}
   m_CullTransparentMesh: 0
+--- !u!114 &277250431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277250427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a333f2e4d584c8e8759c05d5d31567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _container: {fileID: 1407009561}
+  _prefab: {fileID: 972374281}
 --- !u!1 &294901905
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,13 +524,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 972374280}
+  - component: {fileID: 972374281}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &972374280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -533,11 +549,26 @@ RectTransform:
   m_Father: {fileID: 1407009561}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10.5, y: -12}
   m_SizeDelta: {x: 13, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &972374281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972374279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0944acd3ba99a4fb2917206a6f24504f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 1995090949}
+  _selection: {fileID: 33498408}
+  _value: {fileID: 78911715}
 --- !u!1 &1407009560
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +580,7 @@ GameObject:
   - component: {fileID: 1407009561}
   - component: {fileID: 1407009562}
   m_Layer: 0
-  m_Name: HorizontalGroup
+  m_Name: Collection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryItemWidget : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Image _icon;
+    [SerializeField] private GameObject _selection;
+    [SerializeField] private Text _value;
 
-    // Update is called once per frame
-    void Update()
+    private readonly CompositeDisposable _trash = new CompositeDisposable();
+
+    private int _index;
+    public void SetData(InventoryItemData item, int index)
     {
-        
+        _index = index;
+        var def = DefsFacade.I.Items.Get(item.Id);
+        _icon.sprite = def.Icon;
+        _value.text = def.IsStackable ? item.Value.ToString() : string.Empty;
     }
 }

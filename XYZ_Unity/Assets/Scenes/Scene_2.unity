@@ -768,7 +768,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: Coin
+        Value: 20
+      - Id: Key
+        Value: 1
+      - Id: Sword
+        Value: 20
     MaxHp: 20
     Hp:
       _value: 0
