@@ -10,6 +10,7 @@ namespace PixelCrew.Model
     {
         [SerializeField] private PlayerData _data;
         public PlayerData Data => _data;
+        public QuickInventoryModel QuickInventory { get; private set; }
 
         private void Awake()
         {
@@ -21,6 +22,7 @@ namespace PixelCrew.Model
             } 
             else
             {
+                InitModels();
                 DontDestroyOnLoad(this);
             }
 
@@ -30,6 +32,13 @@ namespace PixelCrew.Model
         {
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
+
+
+        private void InitModels()
+        {
+            QuickInventory = new QuickInventoryModel(Data);
+        }
+
 
         private bool IsSessionExit()
         {

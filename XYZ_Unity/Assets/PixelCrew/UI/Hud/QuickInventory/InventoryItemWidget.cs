@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using PixelCrew.Model;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,18 @@ public class InventoryItemWidget : MonoBehaviour
     private readonly CompositeDisposable _trash = new CompositeDisposable();
 
     private int _index;
+
+    private void Start()
+    {
+        var session = FindObjectOfType<GameSession>();
+        session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged);
+    }
+
+    private void OnIndexChanged(int newValue, int _)
+    {
+        _selection.SetActive(_index == newValue);
+    }
+
     public void SetData(InventoryItemData item, int index)
     {
         _index = index;

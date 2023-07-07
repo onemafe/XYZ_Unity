@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,20 @@ public class ObservableProperty<TPropertyType>
     public delegate void OnPropertyChanged(TPropertyType newValue, TPropertyType oldValue);
 
     public event OnPropertyChanged OnChanged;
+
+    public IDisposable Subscribe(OnPropertyChanged call)
+    {
+        OnChanged += call;
+        return new ActionDisposable(() => OnChanged -= call);
+    }
+
+    public IDisposable SubscribeAndInvoke(OnPropertyChanged call)
+    {
+        OnChanged += call;
+        var dispose = new ActionDisposable(() => OnChanged -= call);
+        call(_value, _value);
+        return dispose;
+    }
 
 
     public TPropertyType Value
@@ -23,5 +38,10 @@ public class ObservableProperty<TPropertyType>
             _value = value;
             OnChanged?.Invoke(_value, oldValue);
         }
+    }
+
+    protected void InvokeChangedEvent(TPropertyType newValue, TPropertyType oldValue)
+    {
+        OnChanged?.Invoke(newValue, oldValue);
     }
 }
