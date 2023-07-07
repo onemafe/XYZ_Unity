@@ -65,6 +65,14 @@ namespace PixelCrew
             }
         }
 
+        public void OnNextItem(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                _hero.NextItem();
+            }
+        }
+
 
 
 

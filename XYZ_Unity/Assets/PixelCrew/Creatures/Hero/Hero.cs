@@ -355,6 +355,11 @@ namespace PixelCrew.Creatures
             _session.Data.Hp.Value = health._health;
         }
 
+        public void NextItem()
+        {
+            _session.QuickInventory.SetNextItem();
+        }
+
     }
 }
 
