@@ -37,6 +37,12 @@ public class InventoryData
 
 
 
+    public InventoryItemData[] GetAll()
+    {
+        return _inventory.ToArray();
+    }
+
+
 
     private void AddToStack(string id, int value)
     {

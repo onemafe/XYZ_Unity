@@ -22,7 +22,8 @@ public class AudioSettingsWidget : MonoBehaviour
     public void SetModel(FloatPersistentProperty model)
     {
         _model = model;
-        model.OnChanged += OnValueChanged;
+        _trash.Retain(model.Subscribe(OnValueChanged));
+        //model.OnChanged += OnValueChanged;
         OnValueChanged(model.Value, model.Value);
     }
 
@@ -45,6 +46,6 @@ public class AudioSettingsWidget : MonoBehaviour
     {
         _trash.Dispose();
         //_slider.onValueChanged.RemoveListener(OnSliderValueChanged);
-        _model.OnChanged -= OnValueChanged;
+        //_model.OnChanged -= OnValueChanged;
     }
 }
