@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -2547497982798695635}
   - component: {fileID: -8197679054919936643}
   - component: {fileID: 6892992603930032896}
+  - component: {fileID: 6928158512121340540}
   m_Layer: 13
   m_Name: PearlSinProjectile
   m_TagString: Untagged
@@ -207,3 +208,17 @@ MonoBehaviour:
   _invertX: 1
   _frequency: 20
   _amplitude: 0.1
+--- !u!114 &6928158512121340540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800717061861542813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd77d7045d807e8488365ae915039852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
+  _invertX: 0

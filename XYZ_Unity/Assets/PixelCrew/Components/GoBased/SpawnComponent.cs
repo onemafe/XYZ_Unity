@@ -19,5 +19,10 @@ namespace PixelCrew.Components
             var scale = _target.lossyScale;
             instantiate.transform.localScale = scale;
         }
+
+        public void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
+        }
     }
 }

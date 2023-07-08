@@ -14,6 +14,7 @@ public class QuickInventoryModel
 
     public Action OnChanged;
 
+    public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
 
 
     public QuickInventoryModel(PlayerData data)

@@ -32,6 +32,7 @@ namespace PixelCrew.Creatures
         private Cooldown _superThrowCooldown;
         [SerializeField] private int _superThrowParticles;
         [SerializeField] private float _superThrowDelay;
+        [SerializeField] private SpawnComponent _throwSpawner;
 
 
 
@@ -183,9 +184,7 @@ namespace PixelCrew.Creatures
 
             else
             {
-                _particles.Spawn("Throw");
-                Sounds.Play("Range");
-                RemoveFromInventory("Sword", 1);
+                ThrowAndRemoveFromInventory();
             }
             _superThrow = false;
         }
@@ -197,11 +196,22 @@ namespace PixelCrew.Creatures
         {
             for (int i = 0; i < numThrows; i++)
             {
-                _particles.Spawn("Throw");
-                Sounds.Play("Range");
-                RemoveFromInventory("Sword", 1);
+                ThrowAndRemoveFromInventory();
                 yield return new WaitForSeconds(_superThrowDelay);
             }
+        }
+
+        private void ThrowAndRemoveFromInventory()
+        {
+            //_particles.Spawn("Throw");
+
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
+
+            _throwSpawner.SetPrefab(throwableDef.Projectile);
+            _throwSpawner.Spawn();
+            Sounds.Play("Range");
+            RemoveFromInventory(throwableId, 1);
         }
 
 
@@ -225,6 +235,8 @@ namespace PixelCrew.Creatures
             _superThrowCooldown.Reset();
         }
 
+
+
         public void PerformThrowing()
         {
             if (!_throwCooldown.IsReady || SwordCount <= 1)
@@ -245,11 +257,12 @@ namespace PixelCrew.Creatures
             }
         }
 
+
+
         public void ShowScores()
         {
             Debug.Log($"��� ����: {CoinsCount}");
         }
-
 
 
 
@@ -265,7 +278,6 @@ namespace PixelCrew.Creatures
 
 
         
-
 
         private void SpawnCoins()
         {
@@ -309,16 +321,6 @@ namespace PixelCrew.Creatures
         }
 
 
-
-        /*public void SpawnJumpDust()
-        {
-            _footJumpParticles.Spawn();
-        }
-
-        public void SpawnSwordAttackParticle()
-        {
-            _swordAttackParticle.Spawn();
-        }*/
 
 
 
