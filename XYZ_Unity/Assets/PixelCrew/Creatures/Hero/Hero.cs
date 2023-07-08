@@ -34,6 +34,8 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _superThrowDelay;
         [SerializeField] private SpawnComponent _throwSpawner;
 
+        private const string SwordId = "Sword";
+
 
 
         [Space] [Header("Particles")]
@@ -50,7 +52,23 @@ namespace PixelCrew.Creatures
 
 
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
+
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+
+        private bool CanThrow //какой-то флаг
+        {
+            get
+            {
+                if(SelectedItemId == SwordId)
+                {
+                    return SwordCount > 1;
+                }
+
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
 
         //private bool _isArmed;
         //public int scores;
@@ -88,7 +106,7 @@ namespace PixelCrew.Creatures
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == "Sword")
+            if (id == SwordId)
             {
                 UpdateHeroWeapon();
             }
@@ -177,8 +195,10 @@ namespace PixelCrew.Creatures
         {
             if (_superThrow)
             {
+                var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+                var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount; 
 
-                var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
                 StartCoroutine(DoSuperThrow(numThrows));
             }
 
@@ -239,7 +259,7 @@ namespace PixelCrew.Creatures
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady || SwordCount <= 1)
+            if (!_throwCooldown.IsReady || !CanThrow)
             {
                 return;
             }

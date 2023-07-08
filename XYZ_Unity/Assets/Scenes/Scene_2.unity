@@ -773,8 +773,6 @@ MonoBehaviour:
         Value: 20
       - Id: Key
         Value: 1
-      - Id: Sword
-        Value: 20
     MaxHp: 20
     Hp:
       _value: 0
@@ -31675,6 +31673,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 638813382}
     m_Modifications:
+    - target: {fileID: 7508193361755157989, guid: c5262ce6def9bd046a37dbcabfe030f0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c00f617e32271774b9d6db5f9939ed83, type: 2}
     - target: {fileID: 7508193361755157997, guid: c5262ce6def9bd046a37dbcabfe030f0,
         type: 3}
       propertyPath: m_Name
