@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 3761762638678054860}
   - component: {fileID: 8664555055766336242}
   - component: {fileID: 3295310540762559202}
+  - component: {fileID: -378148574827081250}
   - component: {fileID: -2547497982798695635}
   - component: {fileID: -8197679054919936643}
   - component: {fileID: 6892992603930032896}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: HeroPearlProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +155,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -8197679054919936643}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-378148574827081250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800717061861542813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75052cd1db5045541a8560cdcab7e6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Untagged
+  _layer:
+    serializedVersion: 2
+    m_Bits: 1792
+  _action:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: -8197679054919936643}
         m_MethodName: DestroyObject
         m_Mode: 1
