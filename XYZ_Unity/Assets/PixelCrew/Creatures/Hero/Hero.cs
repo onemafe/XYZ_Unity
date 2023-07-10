@@ -259,6 +259,9 @@ namespace PixelCrew.Creatures
 
         public void PerformThrowing()
         {
+            var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+            var possibleCount = SelectedItemId == SwordId ? 1 : 0;
+
             if (!_throwCooldown.IsReady || !CanThrow)
             {
                 return;
@@ -269,7 +272,7 @@ namespace PixelCrew.Creatures
             if (_throwCooldown.IsReady)
             {
 
-                if (SwordCount > 1)
+                if (throwableCount > possibleCount)
                 {
                     Animator.SetTrigger(ThrowKey);
                     _throwCooldown.Reset();
