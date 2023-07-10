@@ -16,6 +16,12 @@ MonoBehaviour:
   - _id: SmallHealthPotion
     _value: 5
     _time: 0
+    _effect: 0
   - _id: LargeHealthPotion
     _value: 10
     _time: 0
+    _effect: 0
+  - _id: SpeedUpPotion
+    _value: 10
+    _time: 5
+    _effect: 1

@@ -81,6 +81,14 @@ namespace PixelCrew.Creatures
         {
             return _groundCheck.isTouchingLayer;
         }
+
+
+        protected virtual float CalculateSpeed()
+        {
+            return _speed;
+        }
+
+
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = Rigidbody.velocity.y;
