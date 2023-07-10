@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 562adc9c3ba7f43ed818c6fd15719871, type: 3}
-  m_Name: InventoryItems
+  m_Name: Items
   m_EditorClassIdentifier: 
-  _items:
+  _collection:
   - _id: Coin
     _icon: {fileID: -2322180950842035098, guid: 7c12c8f8ef3b3424d8e1862b35c4a1c2,
       type: 3}
-    _tags: 0000000001000000
+    _tags: 00000000
   - _id: Sword
     _icon: {fileID: 21300000, guid: 8a7d4952e6d424f4f8e3d8eea234fd3d, type: 3}
     _tags: 000000000100000002000000
   - _id: Key
     _icon: {fileID: 21300000, guid: 2b21fc28e9a6bcc4aab0cc6e7bca9cf3, type: 3}
-    _tags: 
-  - _id: BottleHealth
-    _icon: {fileID: 3714227102187029162, guid: 4cc5fc4fe28a5a24b853c78e8d0e889f, type: 3}
-    _tags: 
+    _tags: 01000000
   - _id: PearlProjectile
     _icon: {fileID: 21300000, guid: 76553a52db9b3df4db948c362146805a, type: 3}
     _tags: 000000000100000002000000
+  - _id: SmallHealthPotion
+    _icon: {fileID: 7142050841817600938, guid: 4cc5fc4fe28a5a24b853c78e8d0e889f, type: 3}
+    _tags: 030000000100000000000000
+  - _id: LargeHealthPotion
+    _icon: {fileID: -8438763151253471919, guid: 4cc5fc4fe28a5a24b853c78e8d0e889f,
+      type: 3}
+    _tags: 030000000100000000000000

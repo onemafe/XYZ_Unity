@@ -257,11 +257,33 @@ namespace PixelCrew.Creatures
 
 
 
-        public void PerformThrowing()
+        public void UseInventory()
         {
-            var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
-            var possibleCount = SelectedItemId == SwordId ? 1 : 0;
+            var isThrowable = _session.QuickInventory.SelectedDef.HasTag(ItemTag.Throwable);
+            if (IsSelectedItem(ItemTag.Throwable))
+                PerformThrowing();
 
+            else if (IsSelectedItem(ItemTag.Potion))
+                UsePotion();
+
+        }
+
+
+        private void UsePotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+            _session.Data.Hp.Value += (int)potion.Value;
+
+            _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        private bool IsSelectedItem(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
+        }
+
+        private void PerformThrowing()
+        {
             if (!_throwCooldown.IsReady || !CanThrow)
             {
                 return;
@@ -269,18 +291,9 @@ namespace PixelCrew.Creatures
             if (_superThrowCooldown.IsReady)
                 _superThrow = true;
 
-            if (_throwCooldown.IsReady)
-            {
-
-                if (throwableCount > possibleCount)
-                {
-                    Animator.SetTrigger(ThrowKey);
-                    _throwCooldown.Reset();
-                }
-            }
+            Animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
-
-
 
         public void ShowScores()
         {

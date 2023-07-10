@@ -771,8 +771,10 @@ MonoBehaviour:
       _inventory:
       - Id: PearlProjectile
         Value: 20
-      - Id: Key
-        Value: 1
+      - Id: SmallHealthPotion
+        Value: 2
+      - Id: LargeHealthPotion
+        Value: 2
     MaxHp: 20
     Hp:
       _value: 0

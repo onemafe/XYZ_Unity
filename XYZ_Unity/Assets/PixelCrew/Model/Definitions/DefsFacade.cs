@@ -8,16 +8,18 @@ using UnityEngine;
 public class DefsFacade : ScriptableObject
 {
 
-    [SerializeField] private InventoryItemsDef _items;
-    [SerializeField] private ThrowableItemsDef _throwableItems;
+    [SerializeField] private ItemsRepository _items;
+    [SerializeField] private ThrowableRepository _throwableItems;
     [SerializeField] private PlayerDef _player;
+    [SerializeField] private PotionRepository _potions;
 
 
 
 
-    public InventoryItemsDef Items => _items;
-    public ThrowableItemsDef ThrowableItems => _throwableItems;
+    public ItemsRepository Items => _items;
+    public ThrowableRepository ThrowableItems => _throwableItems;
     public PlayerDef Player => _player;
+    public PotionRepository Potions => _potions;
 
 
 

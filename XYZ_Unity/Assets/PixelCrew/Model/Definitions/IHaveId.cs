@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemTag
+public interface IHaveId
 {
-    Stackable,
-    Usable,
-    Throwable
+    string Id { get; }
 }
