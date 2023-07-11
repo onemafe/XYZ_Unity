@@ -10,7 +10,10 @@ namespace PixelCrew.Model
     {
         [SerializeField] private PlayerData _data;
         public PlayerData Data => _data;
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+
         public QuickInventoryModel QuickInventory { get; private set; }
+
 
         private void Awake()
         {
@@ -37,6 +40,7 @@ namespace PixelCrew.Model
         private void InitModels()
         {
             QuickInventory = new QuickInventoryModel(Data);
+            _trash.Retain(QuickInventory);
         }
 
 
@@ -50,6 +54,11 @@ namespace PixelCrew.Model
             }
 
             return false;
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 
