@@ -37,3 +37,7 @@ MonoBehaviour:
     _icon: {fileID: -3065595510956808684, guid: 4cc5fc4fe28a5a24b853c78e8d0e889f,
       type: 3}
     _tags: 030000000100000000000000
+  - _id: GreenGem
+    _icon: {fileID: -3065595510956808684, guid: 4cc5fc4fe28a5a24b853c78e8d0e889f,
+      type: 3}
+    _tags: 

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlaySoundComponent : MonoBehaviour
 {
+    public const string SfxSourceTag = "SfxAudioSource";
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioData[] _sounds;
 
@@ -15,7 +16,7 @@ public class PlaySoundComponent : MonoBehaviour
             if (audioData.Id != id) continue;
 
             if (_source == null)
-                _source = GameObject.FindWithTag("SfxAudioSource").GetComponent<AudioSource>();
+                _source = AudioUtils.FindSfxSource();
 
             _source.PlayOneShot(audioData.Clip);
             break;

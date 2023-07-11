@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _required:
   - Id: Coin
-    Value: 1
+    Value: 0
   - Id: Key
-    Value: 1
+    Value: 2
   _removeAfterUse: 1
   _onSuccess:
     m_PersistentCalls:
@@ -45,7 +45,36 @@ MonoBehaviour:
         m_CallState: 2
   _onFail:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5236016094615780614}
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5236016094615780614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491569503215696493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cdf905be9d14faa92a2c25563c423f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - You need a key...
+    - Try to search upper floor.
+  _external: {fileID: 0}
 --- !u!1001 &5236016092874351953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,12 +105,12 @@ PrefabInstance:
     - target: {fileID: 333241887027306296, guid: ebc02f593046f2944b7e88fcc7ff480a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.629999
+      value: 25.63
       objectReference: {fileID: 0}
     - target: {fileID: 333241887027306296, guid: ebc02f593046f2944b7e88fcc7ff480a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.99
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 333241887027306296, guid: ebc02f593046f2944b7e88fcc7ff480a,
         type: 3}
