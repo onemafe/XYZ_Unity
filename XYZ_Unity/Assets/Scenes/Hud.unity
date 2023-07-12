@@ -1564,7 +1564,7 @@ GameObject:
   - component: {fileID: 1966036160}
   - component: {fileID: 1966036159}
   m_Layer: 0
-  m_Name: DualogBox
+  m_Name: DialogBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
