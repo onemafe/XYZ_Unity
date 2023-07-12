@@ -43,6 +43,7 @@ public class LocaleDef : ScriptableObject
         if(operation.isDone)
         {
             var rows = _request.downloadHandler.text.Split('\n');
+            _localeItems.Clear();
             foreach (var row in rows)
             {
                 AddLocaleItem(row);

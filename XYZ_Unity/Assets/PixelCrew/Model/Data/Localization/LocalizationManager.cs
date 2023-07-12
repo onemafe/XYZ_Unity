@@ -12,6 +12,8 @@ public class LocalizationManager
 
     public event Action OnLocaleChanged;
 
+    public string LocaleKey => _localeKey.Value;
+
     static LocalizationManager()
     {
         I = new LocalizationManager();
@@ -22,15 +24,25 @@ public class LocalizationManager
         LoadLocale(_localeKey.Value);
     }
 
+
+  
+
+
     public void LoadLocale(string localeToLoad)
     {
         var def = Resources.Load<LocaleDef>($"Locales/{localeToLoad}");
         _localization = def.GetData();
+        _localeKey.Value = localeToLoad;
         OnLocaleChanged?.Invoke();
     }
 
     public string Localize(string key)
     {
         return _localization.TryGetValue(key, out var value) ? value : $"%%%{key}%%%";
+    }
+
+    public void SetLocale(string localeKey)
+    {
+        LoadLocale(localeKey);
     }
 }

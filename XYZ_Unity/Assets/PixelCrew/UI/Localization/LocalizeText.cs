@@ -30,5 +30,10 @@ public class LocalizeText : MonoBehaviour
         _text.text = _capitalize ? localized.ToUpper() : localized;
     }
 
+    private void OnDestroy()
+    {
+        LocalizationManager.I.OnLocaleChanged -= OnLocaleChanged;
+    }
+
 
 }

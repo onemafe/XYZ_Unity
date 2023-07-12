@@ -18,5 +18,4 @@ public class StringPersistentProperty : PrefsPersistentProperty<string>
     {
         return PlayerPrefs.GetString(Key, defaultValue);
     }
-
 }
