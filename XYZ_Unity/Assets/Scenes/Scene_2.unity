@@ -32263,6 +32263,16 @@ PrefabInstance:
       propertyPath: _required.Array.data[1].Value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5236016094615780614, guid: 4483f42604b7f4abc9765dd8b7cbb245,
+        type: 3}
+      propertyPath: _bound._sentences.Array.data[0]
+      value: door_need a key
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236016094615780614, guid: 4483f42604b7f4abc9765dd8b7cbb245,
+        type: 3}
+      propertyPath: _bound._sentences.Array.data[1]
+      value: door_try to search updoor
+      objectReference: {fileID: 0}
     - target: {fileID: 5491569503215696489, guid: 4483f42604b7f4abc9765dd8b7cbb245,
         type: 3}
       propertyPath: m_RootOrder

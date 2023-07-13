@@ -27,4 +27,8 @@ MonoBehaviour:
   - Key: button_language
     Value: "Language\r"
   - Key: button_back
-    Value: Back
+    Value: "Back\r"
+  - Key: door_need a key
+    Value: "Need a key...\r"
+  - Key: door_try to search updoor
+    Value: Try to search it updoor.
