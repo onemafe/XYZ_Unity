@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 namespace PixelCrew.Model
 {
@@ -14,21 +15,52 @@ namespace PixelCrew.Model
 
         public QuickInventoryModel QuickInventory { get; private set; }
 
+        private readonly List<string> _checkpoints = new List<string>();
+        [SerializeField] private string _defaultCheckpoint;
 
         private void Awake()
         {
-            LoadHud();
+            
 
-            if (IsSessionExit())
+            var existSession = GetExistSession();
+            if (existSession != null)
             {
+                existSession.StartSession(_defaultCheckpoint);
                 Destroy(gameObject);
-            } 
-            else
-            {
-                InitModels();
-                DontDestroyOnLoad(this);
             }
 
+            else
+            {
+                //Save(); Ну и откуда он блин взялся?
+
+                InitModels();
+                DontDestroyOnLoad(this);
+                StartSession(_defaultCheckpoint);
+            }
+
+        }
+
+        private void StartSession(string defaultChecpoint)
+        {
+            SetChecked(defaultChecpoint);
+
+            LoadHud();
+            SpawnHero();
+        }
+
+        private void SpawnHero()
+        {
+            var checkpoints = FindObjectsOfType<CheckpointComponent>();
+            var lastCheckpoint = _checkpoints.Last();
+            foreach (var checkpoint in checkpoints)
+            {
+                if (checkpoint.Id == lastCheckpoint)
+                {
+                    checkpoint.SpawnHero();
+                    break;
+                }
+            }
+                
         }
 
         private void LoadHud()
@@ -44,22 +76,38 @@ namespace PixelCrew.Model
         }
 
 
-        private bool IsSessionExit()
+        private GameSession GetExistSession()
         {
             var sessions = FindObjectsOfType<GameSession>();
             foreach (var gameSession in sessions)
             {
                 if (gameSession != this)
-                    return true;
+                    return gameSession;
             }
 
-            return false;
+            return null;
         }
 
         private void OnDestroy()
         {
             _trash.Dispose();
         }
+
+        public bool IsChecked(string id)
+        {
+            return _checkpoints.Contains(id);
+        }
+
+        public void SetChecked(string id)
+        {
+            if (!_checkpoints.Contains(id))
+            {
+                //Save();
+                _checkpoints.Add(id);
+            }
+
+        }
+
     }
 
 
