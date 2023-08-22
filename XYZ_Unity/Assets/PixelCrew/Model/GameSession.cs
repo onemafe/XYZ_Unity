@@ -18,10 +18,17 @@ namespace PixelCrew.Model
         private readonly List<string> _checkpoints = new List<string>();
         [SerializeField] private string _defaultCheckpoint;
 
+        public List<string> showCheckpoints;
+
+        // Для отображения чекпоинтов в инспекторе
+        private void Update()
+        {
+            showCheckpoints = _checkpoints;
+        }
+
         private void Awake()
         {
             
-
             var existSession = GetExistSession();
             if (existSession != null)
             {

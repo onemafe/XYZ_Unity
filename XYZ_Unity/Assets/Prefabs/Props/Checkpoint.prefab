@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9178767131119990959}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.72, y: 3.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcdd71b2a8374363b3429fcb348f64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 
+  _id: L1-1
+  _heroSpawner: {fileID: 9178767131119990957}
   _setChecked:
     m_PersistentCalls:
       m_Calls:
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 9178767131119990956}
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 7508193361755157997, guid: c5262ce6def9bd046a37dbcabfe030f0, type: 3}
 --- !u!58 &9178767131119990960
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9178767131119990959}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

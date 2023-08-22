@@ -11,18 +11,19 @@ using UnityEngine.Events;
 public class CheckpointComponent : MonoBehaviour
 {
     [SerializeField] private string _id;
+    [SerializeField] private SpawnComponent _heroSpawner;
     [SerializeField] private UnityEvent _setChecked;
     [SerializeField] private UnityEvent _setUnchecked;
 
     public string Id => _id;
 
-    private SpawnComponent _heroSpawner;
+
 
     private GameSession _session;
 
+
     private void Start()
     {
-        _heroSpawner = GetComponent<SpawnComponent>();
         _session = FindObjectOfType<GameSession>();
         if (_session.IsChecked(_id))
             _setChecked?.Invoke();
@@ -33,6 +34,7 @@ public class CheckpointComponent : MonoBehaviour
     public void Check()
     {
         _session.SetChecked(_id);
+        _setChecked?.Invoke();
     }
 
     public void SpawnHero()
