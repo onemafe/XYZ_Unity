@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1bf834caa444efda80ec49c3d02007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: 
+  _key: 
   _capitalize: 0
 --- !u!1 &1748886035
 GameObject:
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcb8fc30644c4ec4bb02f5eed908711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: {fileID: 1722734595}
+  _text: {fileID: 1722734592}
   _container: {fileID: 2014423529}
   _animator: {fileID: 1966036159}
   _textSpeed: 0.09
