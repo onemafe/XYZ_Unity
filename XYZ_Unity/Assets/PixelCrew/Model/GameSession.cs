@@ -20,6 +20,8 @@ namespace PixelCrew.Model
 
         public List<string> showCheckpoints;
 
+        private PlayerData _save;
+
         // Для отображения чекпоинтов в инспекторе
         private void Update()
         {
@@ -38,13 +40,24 @@ namespace PixelCrew.Model
 
             else
             {
-                //Save(); Ну и откуда он блин взялся?
-
+                Save();
                 InitModels();
                 DontDestroyOnLoad(this);
                 StartSession(_defaultCheckpoint);
             }
 
+        }
+
+        public void Save()
+        {
+            _save = _data.Clone();
+        }
+
+        public void LoadLastSave()
+        {
+            _data = _save.Clone();
+            _trash.Dispose();
+            InitModels();
         }
 
         private void StartSession(string defaultChecpoint)
@@ -114,6 +127,8 @@ namespace PixelCrew.Model
             }
 
         }
+
+
 
     }
 
