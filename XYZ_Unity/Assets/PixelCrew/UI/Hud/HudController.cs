@@ -25,6 +25,11 @@ public class HudController : MonoBehaviour
         _healthBar.SetProgress(value);
     }
 
+    public void OnSettings()
+    {
+        WindowUtils.CreateWindow("UI/InGameMenuWindow");
+    }
+
     private void OnDestroy()
     {
         _session.Data.Hp.OnChanged -= OnHealthChanged;

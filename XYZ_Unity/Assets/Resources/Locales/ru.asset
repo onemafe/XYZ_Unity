@@ -16,6 +16,8 @@ MonoBehaviour:
   _localeItems:
   - Key: menu_title
     Value: "\u041C\u0435\u043D\u044E\r"
+  - Key: button_restart
+    Value: "\u0417\u0430\u043D\u043E\u0432\u043E\r"
   - Key: button_start
     Value: "\u0421\u0442\u0430\u0440\u0442\r"
   - Key: button_option

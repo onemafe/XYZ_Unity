@@ -16,6 +16,8 @@ MonoBehaviour:
   _localeItems:
   - Key: menu_title
     Value: "Menu\r"
+  - Key: button_restart
+    Value: "Restart\r"
   - Key: button_start
     Value: "Start\r"
   - Key: button_option
