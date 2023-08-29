@@ -776,6 +776,8 @@ MonoBehaviour:
     MaxHp: 20
     Hp:
       _value: 0
+  _defaultCheckpoint: 
+  showCheckpoints: []
 --- !u!4 &68179166
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,9 +1074,10 @@ PolygonCollider2D:
       - {x: -21.569174, y: 2.5189042}
       - {x: -21.569263, y: 7.3459272}
       - {x: 7.1392746, y: 7.553275}
-      - {x: 12.128539, y: 2.5805142}
-      - {x: 30.575003, y: 2.6707268}
-      - {x: 34.713337, y: 10.765022}
+      - {x: 6.9663253, y: 2.272323}
+      - {x: 18.340014, y: 2.2229557}
+      - {x: 39.435516, y: 2.1313915}
+      - {x: 39.49031, y: 11.227308}
       - {x: 63.263264, y: 11.046487}
       - {x: 63.077587, y: 27.177605}
       - {x: 19.28727, y: 27.227438}
@@ -12288,12 +12291,12 @@ PrefabInstance:
     - target: {fileID: 4515940934081263357, guid: 45da006ef850ac64694c90fcd6e16a89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.875929
+      value: 26.151745
       objectReference: {fileID: 0}
     - target: {fileID: 4515940934081263357, guid: 45da006ef850ac64694c90fcd6e16a89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.3238177
+      value: 5.7765026
       objectReference: {fileID: 0}
     - target: {fileID: 4515940934081263357, guid: 45da006ef850ac64694c90fcd6e16a89,
         type: 3}
@@ -14660,6 +14663,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898964418}
+        m_MethodName: SetReady
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1898964415}
         m_MethodName: DestroyObject
         m_Mode: 1
@@ -14681,6 +14695,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 11400000, guid: 296eafa14fadc48f1a025c501f636c41,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: DialogDef, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1898964418}
+        m_MethodName: SetReady
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14712,6 +14737,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _isReadyToInteract: 1
 --- !u!58 &1898964419
 CircleCollider2D:
   m_ObjectHideFlags: 0

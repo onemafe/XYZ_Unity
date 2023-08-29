@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using PixelCrew.Components;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using static System.Collections.Specialized.BitVector32;
 
 public class DialogBoxController : MonoBehaviour
 {
@@ -21,11 +24,14 @@ public class DialogBoxController : MonoBehaviour
     private int _currentSentence;
     private AudioSource _sfxSource;
     private Coroutine _typingRoutine;
+    private InteractableComponent _dialogSpeaker;
+    private ShowDialogComponent _showDialog;
 
 
     private void Start()
     {
         _sfxSource = AudioUtils.FindSfxSource();
+
     }
 
     public void ShowDialog(DialogData data)
@@ -74,6 +80,7 @@ public class DialogBoxController : MonoBehaviour
         if(isDialogComplete)
         {
             HideDialogBox();
+            _dialogSpeaker.SetReady(true);
         }
         else
         {
@@ -100,6 +107,10 @@ public class DialogBoxController : MonoBehaviour
         _typingRoutine = StartCoroutine(TypeDialogText());
     }
 
+    public void SetDialogSpeaker(InteractableComponent speaker)
+    {
+        _dialogSpeaker = speaker;
+    }
 
 
     private void OnCloseAnimationComplete()
