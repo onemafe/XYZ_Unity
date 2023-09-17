@@ -12,6 +12,7 @@ public class DefsFacade : ScriptableObject
     [SerializeField] private ThrowableRepository _throwableItems;
     [SerializeField] private PlayerDef _player;
     [SerializeField] private PotionRepository _potions;
+    [SerializeField] private PerkRepository _perks;
 
 
 
@@ -20,6 +21,7 @@ public class DefsFacade : ScriptableObject
     public ThrowableRepository ThrowableItems => _throwableItems;
     public PlayerDef Player => _player;
     public PotionRepository Potions => _potions;
+    public PerkRepository Perks => _perks;
 
 
 
@@ -31,6 +33,8 @@ public class DefsFacade : ScriptableObject
         return _instance = Resources.Load<DefsFacade>("DefsFacade");
 
     }
+
+    public TDefType[] All => new List<TDefType>(_collection).ToArray();
 
 
 }

@@ -19,4 +19,6 @@ public class DefRepository<TDefType> : ScriptableObject where TDefType : IHaveId
 
         return default;
     }
+
+    public TDefType[] All => new List<TDefType>(_collection).ToArray();
 }

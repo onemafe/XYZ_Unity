@@ -22,6 +22,8 @@ namespace PixelCrew.Model
 
         private PlayerData _save;
 
+        public PerksModel PerksModel { get; private set; }
+
         // Для отображения чекпоинтов в инспекторе
         private void Update()
         {
@@ -93,6 +95,9 @@ namespace PixelCrew.Model
         {
             QuickInventory = new QuickInventoryModel(Data);
             _trash.Retain(QuickInventory);
+
+            PerksModel = new PerksModel(_data);
+            _trash.Retain(PerksModel);
         }
 
 

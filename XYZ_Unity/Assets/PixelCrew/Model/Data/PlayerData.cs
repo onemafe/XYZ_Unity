@@ -9,7 +9,7 @@ namespace PixelCrew.Model
     {
         [SerializeField] private InventoryData _inventory;
 
-
+        public PerksData Perks = new PerksData();
         public InventoryData Inventory => _inventory;
 
         public int MaxHp;
